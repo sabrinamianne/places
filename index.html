@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Places I've Been</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class= "row">
+        <div class= "col-md-12">
+          <h1>Places I've Been</h1>
+          <form id="formOne">
+            <label for= "userPlace">Enter a place where you have been: </label>
+            <input id="userPlace" type="text" class="form-control"  placeholder="Ex : Paris"><br>
+            <label for= "landmarks">Landmarks you've visited at that place (separate with commas) </label>
+            <input id="landmarks" type="text" class="form-control"  placeholder="Ex : Eiffel Towel, Le Louvre"><br>
+            <label for= "season"> Which season did you go? </label><br>
+            <select id="season">
+              <option value="winter"> Winter </option>
+              <option value="spring"> Spring </option>
+              <option value="summer"> Summer </option>
+              <option value="fall"> Fall </option>
+            </select><br><br>
+            <label for= "year">Which year did you go? </label>
+            <input id="year" type="text" class="form-control" maxlength="4" size="4"><br>
+
+            <p>Between 0 to 5, rate your experience:<br />
+              <input type="radio" name="rating" value="0" id="rating0"</<label for="rating0"> 0</label><br/>
+              <input type="radio" name="rating" value="1" id="rating1"</<label for="rating1"> 1</label><br/>
+              <input type="radio" name="rating" value="2" id="rating2"</<label for="rating2"> 2</label><br/>
+              <input type="radio" name="rating" value="3" id="rating3"</<label for="rating3"> 3</label><br/>
+              <input type="radio" name="rating" value="4" id="rating4"</<label for="rating4"> 4</label><br/>
+              <input type="radio" name="rating" value="5" id="rating5"</<label for="rating5"> 5</label><br/>
+          </p>
+            <label for= "people">With whom did you go? (separate with commas) </label>
+            <input id="people" type="text" class="form-control"  placeholder="Ex : My dog, my wife"><br><br>
+            <button class= "btn btn-info" type="submit"> Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
