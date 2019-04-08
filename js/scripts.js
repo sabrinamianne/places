@@ -51,9 +51,37 @@ $("form#formOne").submit(function(event) {
 
   jQuery(document).ready(function() {
   jQuery("#finalResult").click(function() {
-      $("#finalResultProperties").text(placesVar.fullProperties(newLocation));
+    $("#finalResultProperties").text(placesVar.fullProperties(newLocation));
 
   });
 });
 });
 });
+
+function clear_form_elements(ele) {
+  tags = ele.getElementsByTagName('input');
+  for(i = 0; i<tags.length; i++) {
+    switch(tags[i].type) {
+      case 'text':
+        tags[i].value = " ";
+        break
+      case 'number':
+        tags[i].value = " ";
+        break
+      case 'radio':
+        tags[i].checked = false;
+        break;
+      }
+    }
+    tags = ele.getElementsByTagName ('select');
+    for (i = 0; i<tags.length;i++) {
+      if(tags[i].type == 'select-one') {
+        tags[i].selectedIndex = 0;
+      }
+      else {
+        for (j = 0; j<tags[i].options.length; j++) {
+          tags[i].options[j].selected = false;
+        }
+      }
+    }
+}

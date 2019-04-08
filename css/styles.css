@@ -5,3 +5,14 @@
 #finalResultProperties {
   color: #284a7f;
 }
+
+ul{
+  margin: 4px;
+  border: 1px solid black;
+  padding: 4px;
+  background-color: lightblue;
+}
+
+#head3 {
+  text-align: center;
+}

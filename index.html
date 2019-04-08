@@ -29,7 +29,7 @@
             <input id="year" type="number" class="form-control" maxlength="4" size="4" placeholder="Ex : 2000"><br>
 
             <p>Between 0 to 5, rate your experience:<br />
-              <input type="radio" name="rating" value="0" id="rating0"</<label for="rating0"> 0</label><br/>
+              <input type="radio" name="rating" value="0" id="rating0"/<label for="rating0"> 0</label><br/>
               <input type="radio" name="rating" value="1" id="rating1"</<label for="rating1"> 1</label><br/>
               <input type="radio" name="rating" value="2" id="rating2"</<label for="rating2"> 2</label><br/>
               <input type="radio" name="rating" value="3" id="rating3"</<label for="rating3"> 3</label><br/>
@@ -40,6 +40,7 @@
             <input id="people" type="text" class="form-control"  placeholder="Ex : My dog, my wife"><br><br>
             <!-- <button class= "btn btn-danger"onclick="location.reload();">Add another place</button> -->
             <button class= "btn btn-info" type="submit" id="addNewPlace">Submit</button>
+            <input class="btn btn-danger" type="button" name="clear_form" value="Clear All" onClick="this.form.reset()" />
           </form>
         </div>
       </div>
@@ -55,9 +56,10 @@
       </div>
     </div>
     <div class="container">
-      <div="jumbotron">
+      <div class="my_class">
         <div class= "row">
           <div class="col-md-12">
+            <h3 id="head3">Your Places</h3>
               <ul id="ulFirstList">
               </ul>
           </div>

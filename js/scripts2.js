@@ -57,6 +57,7 @@ $(document).ready(function() {
     var people= $("input#people").val().split(',');
     var rating= $("input:radio[name=rating]:checked").val();
     var newLocation = new LocationConstructor(userPlace, landmarks, season, year, rating, people);
+
     listPlace.addPlace(newLocation);
     displayPlaceDetails(listPlace);
 
@@ -66,6 +67,8 @@ $(document).ready(function() {
   jQuery(document).ready(function() {
   jQuery("#finalResult").click(function() {
       $("#finalResultProperties").text(newLocation.showProperties());
+
+
       });
     });
   });
