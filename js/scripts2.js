@@ -34,26 +34,22 @@ $("form#formOne").submit(function(event) {
   var rating= $("input:radio[name=rating]:checked").val();
 
   var newLocation = new LocationConstructor (userPlace, landmarks, season, year, rating, people); placesVar.addLocation(newLocation)
-  console.log(placesVar.location)
+
 
   var placesList;
     placesVar.places.forEach(function(loc) {
     placesList = loc.location ;
-
-    var propertiesList;
-      placesVar.places.forEach(function(loc,land,sea,yr,rat,comp) {
-      placesList = loc.location + land.landmarks + sea.season + yr.year + rat.rating + comp.companions;
-
   });
+    var propertiesList= "You went to " + userPlace + ", the landmarks are " + landmarks + ". You went there during the " + season + " in " + year + " with this people : " + people + ".Your rate for your experience in "+userPlace +  " from 0 to 5 for this city is  : " + rating + " !";
+
   $("#finalResult").text(placesList);
   $("#output").show();
 
   jQuery(document).ready(function() {
   jQuery("#finalResult").click(function() {
-      $("#finalResultProperties").text("blalalallala");
+      $("#finalResultProperties").text(propertiesList);
 
   });
-
 });
 });
 });

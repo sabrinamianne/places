@@ -16,62 +16,40 @@ function LocationConstructor (location, landmarks, season, year, rating, compani
 Places.prototype.addLocation = function(location) {
   this.places.push(location);
 };
-// var places = new Places();
-//
-// var myHoliday = new Place("Vancouver", ["Capilano Suspension Bridge", "Downtown"], "winter", 2019, 5,["my husband", "Jeremy", "Kevin", "Clement"]);
-//
-// places.addLocation(myHoliday);
+
+var placesVar = new Places();
 
 
-
-//console.log(places)
-var action;
-var places = new Places();
+// User logic
 
 $(document).ready(function() {
+$("form#formOne").submit(function(event) {
+  event.preventDefault();
 
-  $('#addNewPlace, #viewPlaces').click(function () {
-     if (this.id === 'addNewPlace') {
-       action = 'addNewPlace';
-     }
-     else if (this.id === 'viewPlaces') {
-       action = 'viewPlaces';
-     }
+  var userPlace= $("input#userPlace").val();
+  var landmarks= $("input#landmarks").val().split(',');
+  var season= $("select#season").val();
+  var year= $("input#year").val();
+  var people= $("input#people").val().split(',');
+  var rating= $("input:radio[name=rating]:checked").val();
+
+  var newLocation = new LocationConstructor (userPlace, landmarks, season, year, rating, people); placesVar.addLocation(newLocation)
+
+
+  var placesList;
+    placesVar.places.forEach(function(loc) {
+    placesList = loc.location ;
   });
+    var propertiesList= "You went to " + userPlace + ", the landmarks are " + landmarks + ". You went there during the " + season + " in " + year + " with this people : " + people + ".Your rate for your experience in "+userPlace +  " from 0 to 5 for this city is  : " + rating + " !";
 
-  $("form#formOne").submit(function(event) {
-    event.preventDefault();
+  $("#finalResult").text(placesList);
+  $("#output").show();
 
-    var userPlace= $("input#userPlace").val();
-    var landmarks= $("input#landmarks").val().split(',');
-    var season= $("select#season").val();
-    var year= $("input#year").val();
-    var people= $("input#people").val().split(',');
-    var rating= $("input:radio[name=rating]:checked").val();
-
-    var newLocation = new LocationConstructor (userPlace, landmarks, season, year, rating, people);
-
-    places.addLocation(newLocation);
-    console.log(places);
-
-    // if they click add another place, clear input form and redsiplay interval
-    if (action === "addNewPlace") {
-      ("form#userPlace").empty();
-    } else {
-
-    // if they click view places, hide input form and display list of places, each place
-    // is a link and when they click on the link, it lists the properties
-    // ("#formOne").hide();
-    ("#output").show();
-    ("#output").append("<ul></ul>")
-
-    }
-   //  function myFunction() {
-   //   location.reload();
-   // }
-
-
-//    console.log(newPlace);
+  jQuery(document).ready(function() {
+  jQuery("#finalResult").click(function() {
+      $("#finalResultProperties").text(propertiesList);
 
   });
+});
+});
 });

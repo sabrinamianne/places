@@ -16,6 +16,16 @@ When you select a place, the details will be displayed.
 ## Specifications
 
 
+
+| Behavior | Input | Output |
+| ------------- |:-------------:| -----:|
+| Ask to the user to enter some informations about a place they have been and display the name of the Location| Location = Paris,  Landmarks= Eiffel Towel, season = winter, year, 2010, people= my husband, rating from 0 to 5 = 4  |  Paris|
+| The web application display just the location and if the user wants to display the properties he have to click into the place| clickinto the location |"You went to " + Paris + ", the landmarks are " + Eiffel Towel + ". You went there during the " + winter + " in " + 2010 + " with this people : " + my husband + ".Your rate for your experience in "+ Paris +  " from 0 to 5 for this city is  : " + 4 + " !" |
+
+| | | |
+
+
+
 ## Setup/Installation Requirements
 
 * Clone this repository
@@ -27,7 +37,7 @@ When you select a place, the details will be displayed.
 
 ## Support and contact details
 
-_Contact Tessa Sullivan at tessa.sullivan@gmail.com for any issues found._
+_Contact Tessa Sullivan or Sabrina Mianne at tessa.sullivan@gmail.com/ sabrina.epicodus@gmail.com for any issues found._
 
 ## Technologies Used
 
@@ -37,4 +47,4 @@ _Contact Tessa Sullivan at tessa.sullivan@gmail.com for any issues found._
 
 *This software is licensed under the MIT license.*
 
-Copyright (c) 2019 **_Tessa Sullivan_**
+Copyright (c) 2019 **_Tessa Sullivan and Sabrina Mianne_**
