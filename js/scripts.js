@@ -40,6 +40,10 @@ $("form#formOne").submit(function(event) {
     placesVar.places.forEach(function(loc) {
     placesList = loc.location ;
   });
+
+  LocationConstructor.prototype.fullProperties = function() {
+  return this.location + this.landmarks+this.season+this.year+this.rating + this.companions;
+}
     var propertiesList= "You went to " + userPlace + ", the landmarks are " + landmarks + ". You went there during the " + season + " in " + year + " with this people : " + people + ".Your rate for your experience in "+userPlace +  " from 0 to 5 for this city is  : " + rating + " !";
 
   $("#finalResult").text(placesList);
@@ -47,7 +51,7 @@ $("form#formOne").submit(function(event) {
 
   jQuery(document).ready(function() {
   jQuery("#finalResult").click(function() {
-      $("#finalResultProperties").text(propertiesList);
+      $("#finalResultProperties").text(placesVar.fullProperties(newLocation));
 
   });
 });

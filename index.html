@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Places I have Been</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts2.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
   </head>
@@ -39,16 +39,29 @@
             <label for= "people">With whom did you go? (separate with commas) </label>
             <input id="people" type="text" class="form-control"  placeholder="Ex : My dog, my wife"><br><br>
             <!-- <button class= "btn btn-danger"onclick="location.reload();">Add another place</button> -->
-            <button class= "btn btn-info" type="submit" id="addNewPlace">Add another place</button>
-            <button class= "btn btn-info" type="submit" id="viewPlaces">View places</button>
+            <button class= "btn btn-info" type="submit" id="addNewPlace">Submit</button>
           </form>
         </div>
       </div>
     </div>
     <div class="container">
-      <div class="output">
-        <br><br><h2> <span id="finalResult"></span></h2>
-        <br><br><h2> <span id="finalResultProperties"></span></h2>
+      <div class= "row">
+        <div class="col-md-12">
+          <div class="output">
+            <br><br><h2> <span id="finalResult"></span></h2>
+            <br><br><h3> <span id="finalResultProperties"></span></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div="jumbotron">
+        <div class= "row">
+          <div class="col-md-12">
+              <ul id="ulFirstList">
+              </ul>
+          </div>
+        </div>
       </div>
     </div>
   </body>
