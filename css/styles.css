@@ -16,3 +16,42 @@ ul{
 #head3 {
   text-align: center;
 }
+
+#title {
+    background-image: url("../img/background1.png");
+    padding-left: 300px;
+}
+
+.jumbotron{
+  height: 65vh;
+  background-size: cover;
+  padding-left: 300px
+}
+
+h1 {
+  text-align: center;
+}
+
+
+.boxmodel-2 {
+  font-size: 90px;
+  text-align: center;
+  background-color: lightblue;
+  font-family: Times,inherit;
+  margin-top: 100px;
+}
+.boxmodel-2 a {
+  font-size: 40px;
+  font-family: Times,inherit;
+  color: black;
+}
+.boxmodel-2 a:hover{
+  color: pink ;
+  text-decoration: underline;
+}
+
+#picworld {
+
+  padding-top: 40px;
+  padding-bottom: 20px;
+}

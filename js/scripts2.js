@@ -41,9 +41,18 @@ function displayPlaceDetails(listPlaceToDisplay) {
   var placesList = $("ul#ulFirstList");
   var htmlForPlaceInfo = "";
   listPlaceToDisplay.listofplaces.forEach(function(places) {
-    htmlForPlaceInfo += "<li id=" + places.id  + ">" + places.location + " " + places.landmarks + " " + places.season + " " + places.year + " " + places.rating + " " + places.companions + "</li>";
+    htmlForPlaceInfo += "<li id=" + places.id  + ">" +"Name of the place : "+ places.location + " Landmarks:  " + places.landmarks + " Season: " + places.season + " Year: " + places.year + " Rate: " + places.rating + "Your Companions:  " + places.companions + "</li>";
   });
   placesList.html(htmlForPlaceInfo);
+};
+
+var functionToDisplay = function displayMessageDetails(listMessageToDisplay) {
+  var propertiesList = $("h3#finalResultProperties");
+  var htmlForPlace2Info = "";
+  listMessageToDisplay.listofplaces.forEach(function(places) {
+  htmlForPlace2Info += "You went to " + places.location+ ", the landmarks are " + places.landmarks + ". You went there during the " + places.season + " in " + places.year + " with this people : " + places.companions + ".Your rate for your experience in "+ places.location +  " from 0 to 5 for this city is  : " + places.rating + " !";
+});
+  propertiesList.html(htmlForPlace2Info);
 };
 
 $(document).ready(function() {
@@ -66,7 +75,7 @@ $(document).ready(function() {
 
   jQuery(document).ready(function() {
   jQuery("#finalResult").click(function() {
-      $("#finalResultProperties").text(newLocation.showProperties());
+      $("#finalResultProperties").text(functionToDisplay);
 
 
       });
