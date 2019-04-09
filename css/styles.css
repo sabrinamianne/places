@@ -6,11 +6,11 @@
   color: #284a7f;
 }
 
-ul{
-  margin: 4px;
-  border: 1px solid black;
-  padding: 4px;
-  background-color: lightblue;
+ol{
+
+  border: 1px ;
+  
+  background-color: #f49d4b;
 }
 
 #head3 {
@@ -32,7 +32,6 @@ h1 {
   text-align: center;
 }
 
-
 .boxmodel-2 {
   font-size: 90px;
   text-align: center;
@@ -51,7 +50,11 @@ h1 {
 }
 
 #picworld {
-
   padding-top: 40px;
   padding-bottom: 20px;
+}
+
+#refresh {
+  margin-left: 40%;
+  margin-top: 40px;
 }

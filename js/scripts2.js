@@ -28,7 +28,7 @@ function LocationConstructor (location, landmarks, season, year, rating, compani
 // method to show just the location
 LocationConstructor.prototype.showLocation = function() {
   return this.location;
-}
+};
 // method to show the properties
 LocationConstructor.prototype.showProperties = function() {
   return "You went to " + this.location+ ", the landmarks are " + this.landmarks + ". You went there during the " + this.season + " in " + this.year + " with this people : " + this.companions + ".Your rate for your experience in "+ this.location +  " from 0 to 5 for this city is  : " + this.rating + " !";;
@@ -38,21 +38,12 @@ LocationConstructor.prototype.showProperties = function() {
 var listPlace = new ListPlace();
 
 function displayPlaceDetails(listPlaceToDisplay) {
-  var placesList = $("ul#ulFirstList");
+  var placesList = $("ol#olFirstList");
   var htmlForPlaceInfo = "";
   listPlaceToDisplay.listofplaces.forEach(function(places) {
-    htmlForPlaceInfo += "<li id=" + places.id  + ">" +"Name of the place : "+ places.location + " Landmarks:  " + places.landmarks + " Season: " + places.season + " Year: " + places.year + " Rate: " + places.rating + "Your Companions:  " + places.companions + "</li>";
+    htmlForPlaceInfo += "<li id=" + places.id  + ">" +"Name of the place :  "+ places.location + "  Landmarks:   " + places.landmarks + "  Season:  " + places.season + "  Year:  " + places.year + "  Rate:  " + places.rating + "  Your Companions:  " + places.companions + "</li>";
   });
   placesList.html(htmlForPlaceInfo);
-};
-
-var functionToDisplay = function displayMessageDetails(listMessageToDisplay) {
-  var propertiesList = $("h3#finalResultProperties");
-  var htmlForPlace2Info = "";
-  listMessageToDisplay.listofplaces.forEach(function(places) {
-  htmlForPlace2Info += "You went to " + places.location+ ", the landmarks are " + places.landmarks + ". You went there during the " + places.season + " in " + places.year + " with this people : " + places.companions + ".Your rate for your experience in "+ places.location +  " from 0 to 5 for this city is  : " + places.rating + " !";
-});
-  propertiesList.html(htmlForPlace2Info);
 };
 
 $(document).ready(function() {
@@ -65,19 +56,24 @@ $(document).ready(function() {
     var year= $("input#year").val();
     var people= $("input#people").val().split(',');
     var rating= $("input:radio[name=rating]:checked").val();
+    var userPlace= userPlace.slice(0,1).toUpperCase() + userPlace.slice(1);
     var newLocation = new LocationConstructor(userPlace, landmarks, season, year, rating, people);
 
     listPlace.addPlace(newLocation);
     displayPlaceDetails(listPlace);
 
-  $("#finalResult").text(newLocation.showLocation());
-  $("#output").show();
+    $("#finalResult").text("Click here ===>      "+newLocation.showLocation()+ "      <=== to see the details of the place.");
+    $("#output").show();
 
-  jQuery(document).ready(function() {
-  jQuery("#finalResult").click(function() {
-      $("#finalResultProperties").text(functionToDisplay);
-
-
+      jQuery(document).ready(function() {
+      jQuery("#finalResult").click(function() {
+        $("#finalResultProperties").text("Click here ===>      "+newLocation.showProperties()+ "     <===to hide the details of the place.");
+        jQuery("#finalResultProperties").click(function() {
+          $("#finalResultProperties").text(" ");
+          function myFunction() {
+            location.reload();
+            }
+        });
       });
     });
   });

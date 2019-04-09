@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Places I have Been</title>
+    <title>List Of Places I've Been To</title>
     <link rel="shortcut icon" href="img/world.ico" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/scripts2.js"></script>
@@ -20,7 +20,7 @@
     <div class="container">
       <div class= "row">
         <div class= "col-md-12">
-          <br><h1> Here Is A List Of Places I Have Visited.</h1><br><br>
+          <br><h1> Tell Us Where You Have Been ? </h1><br><br>
 
           <form id="formOne">
             <label for= "userPlace">Enter a place where you have been: </label>
@@ -36,7 +36,6 @@
             </select><br><br>
             <label for= "year">Which year did you go? </label>
             <input id="year" type="number" class="form-control" maxlength="4" size="4" placeholder="Ex : 2000"><br>
-
             <p>Between 0 to 5, rate your experience:<br />
               <input type="radio" name="rating" value="0" id="rating0"/<label for="rating0"> 0</label><br/>
               <input type="radio" name="rating" value="1" id="rating1"</<label for="rating1"> 1</label><br/>
@@ -67,9 +66,10 @@
       <div class="my_class">
         <div class= "row">
           <div class="col-md-12">
-            <h3 id="head3">Your Places</h3><br>
-              <ul id="ulFirstList">
-              </ul>
+            <br><br><h3 id="head3">Here Is A List Of Places You Have Visited.</h3><br>
+              <ol id="olFirstList">
+              </ol>
+               <button class= "btn btn-danger"onclick="location.reload();"id="refresh">Refresh and clear all cities.</button>
           </div>
         </div>
       </div>
@@ -110,7 +110,7 @@
       <div class="container">
         <div clas="row">
           <div class="col-md-12">
-            <p><img src="img/world.gif" id="picworld" alt="Picture of an animated world" height="450px"></p>
+            <p><img src="img/world.gif" id="picworld" alt="Picture of an animated world" height="360px"></p>
             <a href="#contact.html">Contact</a>
           </div>
         </div>
